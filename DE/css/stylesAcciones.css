@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Manrope:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --blue: #1b2c65;
+  --blue-dark: #131f4a;
+  --blue-light: #243580;
+  --gold: #fac213;
+  --gold-soft: #fdd76a;
+  --white: #ffffff;
+  --off-white: #f7f6f2;
+  --text: #1a1a2e;
+  --text-muted: #6b6b80;
+  --border: #e2e0db;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Manrope", sans-serif;
+
+  --radius: 12px;
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background: var(--off-white);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(27, 44, 101, 0.18);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.header-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.header-tagline {
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: none;
+}
+
+footer {
+  background: var(--blue-dark);
+  padding: 1.5rem 1.25rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.footer-name {
+  font-size: 0.85rem;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+.listaAcciones {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem auto;
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  width: 100%;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  flex: 1;
+}
+
+.Img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.AccionesImg {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.listaAcciones h1 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--blue);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.listaAcciones h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--blue);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.titulo-recuadro {
+  background: var(--blue);
+  color: var(--white);
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  width: fit-content;
+  text-align: center;
+  border-radius: 15px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 18px rgba(27, 44, 101, 0.25);
+}
+
+@media (min-width: 480px) {
+  .header-tagline {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-inner {
+    height: 68px;
+  }
+
+  .header-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-title {
+    font-size: 1.3rem;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header,
+  footer {
+    height: 68px;
+    padding: 0 2rem;
+  }
+
+  .listaAcciones {
+    padding: 3rem;
+  }
+
+  .listaAcciones h1 {
+    font-size: 1.8rem;
+  }
+
+  .listaAcciones h2 {
+    font-size: 2.6rem;
+  }
+}
